@@ -5,10 +5,12 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 const bcrypt = require('bcryptjs');
 const {checkout, validationResult, check} = require('express-validator/check'); 
+const cors = require('cors');
 
 
 const User = require('../../model/User');
 
+app.use(cors())
 router.get('/',async (req,res) => {
     try{
         const user = await User.findById(req.user.id).select('-password');
