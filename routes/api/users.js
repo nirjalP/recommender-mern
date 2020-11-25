@@ -5,11 +5,11 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 const {checkout, validationResult, check} = require('express-validator/check'); 
-const cors = require('cors');
+//const cors = require('cors');
 
 const User = require('../../model/User');
 
-express.use(cors());
+//express.use(cors());
 router.post('/',[
     check('name','Name is required').not().isEmpty(),
     check('email','Please enter valid email').isEmail(),
