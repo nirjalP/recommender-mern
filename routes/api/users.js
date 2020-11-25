@@ -6,10 +6,10 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 const {checkout, validationResult, check} = require('express-validator/check'); 
 const cors = require('cors');
-
+var app = express();
 const User = require('../../model/User');
 
-express.use(cors());
+app.use(cors());
 router.post('/',[
     check('name','Name is required').not().isEmpty(),
     check('email','Please enter valid email').isEmail(),
